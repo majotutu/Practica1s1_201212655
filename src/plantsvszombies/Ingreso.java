@@ -9,7 +9,10 @@ package plantsvszombies;
  * @author MariaJose
  */
 public class Ingreso extends javax.swing.JFrame {
-
+int contadasp=0;
+int contadasz=0;
+Plantas p;
+Zombies z;
     /**
      * Creates new form Ingreso
      */
@@ -77,14 +80,25 @@ public class Ingreso extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-Plantas p=new Plantas();
+if(contadasp==0){
+p=new Plantas();
+}
 p.setVisible(true);
+contadasp++;
+p.jLabel1.setText("Nombre");
+p.jLabel2.setText("Cantidad");
 
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
  
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+if(contadasz==0){
+z=new Zombies();}
+z.setVisible(true);
+contadasz++;
+z.jLabel1.setText("Nombre");
+z.jLabel2.setText("Cantidad");
+// TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed

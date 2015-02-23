@@ -23,7 +23,7 @@ ListaJugPlanta listaJP =new ListaJugPlanta();
      */
     public Plantas() {
         initComponents();
-        jTextField3.setVisible(false);
+       
         estado=false;
         
     }
@@ -44,7 +44,6 @@ ListaJugPlanta listaJP =new ListaJugPlanta();
         jLabel3 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jTextField3 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(51, 204, 0));
@@ -55,13 +54,13 @@ ListaJugPlanta listaJP =new ListaJugPlanta();
         getContentPane().add(jTextField1);
         jTextField1.setBounds(160, 150, 148, 30);
         getContentPane().add(jTextField2);
-        jTextField2.setBounds(160, 200, 148, 30);
+        jTextField2.setBounds(160, 210, 148, 30);
 
         jLabel1.setBackground(java.awt.Color.white);
         jLabel1.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
         jLabel1.setText("Nombre");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(30, 140, 68, 26);
+        jLabel1.setBounds(30, 150, 68, 26);
 
         jLabel2.setBackground(java.awt.Color.white);
         jLabel2.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
@@ -82,7 +81,7 @@ ListaJugPlanta listaJP =new ListaJugPlanta();
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(330, 290, 60, 57);
+        jButton1.setBounds(330, 300, 40, 40);
 
         jButton2.setBackground(java.awt.Color.white);
         jButton2.setText("Agregar campo");
@@ -92,9 +91,7 @@ ListaJugPlanta listaJP =new ListaJugPlanta();
             }
         });
         getContentPane().add(jButton2);
-        jButton2.setBounds(170, 310, 120, 23);
-        getContentPane().add(jTextField3);
-        jTextField3.setBounds(160, 250, 148, 30);
+        jButton2.setBounds(170, 320, 120, 23);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -102,21 +99,26 @@ ListaJugPlanta listaJP =new ListaJugPlanta();
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 Nombre=jTextField1.getText();
 Cantidad=jTextField2.getText();
-Extra=jTextField3.getText();
+
 
 listaJP.InsertarPrimero(Nombre);
 listaJP.InsertarPrimero(Cantidad);
-if(estado=true){
-listaJP.InsertarPrimero(Extra);}
+System.out.println("Largo   "+listaJP.Largo());
+        System.out.println("cero   "+listaJP.Obtener(listaJP.Largo()-1));
+        System.out.println("uno   "+listaJP.Obtener(listaJP.Largo()-2));
 
 
 
+
+   
 
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-jTextField3.setVisible(true);
+jLabel1.setText("Extra");
+jLabel2.setText("Extra");
+
 estado=true;
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -158,12 +160,11 @@ estado=true;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    public javax.swing.JLabel jLabel1;
+    public javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
 
     public String regresarInf1(String info) {

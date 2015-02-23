@@ -37,8 +37,8 @@ public class ListaJugPlanta {
             else{
                 NodoJugadorP temp=cabeza;
                 NodoJugadorP nuevo=new NodoJugadorP(ob);
-                temp.apuntar(nuevo);
-                cabeza=temp;
+                nuevo.apuntar(temp);
+                cabeza=nuevo;
                 }
             tamaño++;
         }
