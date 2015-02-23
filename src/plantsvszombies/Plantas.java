@@ -10,12 +10,21 @@ package plantsvszombies;
  */
 public class Plantas extends javax.swing.JFrame {
 String Nombre;
+Boolean estado;
 String Cantidad;
+String Extra;
+int numero=0;
+NodoJugadorP Primero;
+NodoJugadorP Ultimo;
+ListaJugPlanta listaJP =new ListaJugPlanta();
+
     /**
      * Creates new form Plantas
      */
     public Plantas() {
         initComponents();
+        jTextField3.setVisible(false);
+        estado=false;
         
     }
 
@@ -35,32 +44,37 @@ String Cantidad;
         jLabel3 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jTextField3 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(51, 204, 0));
         setForeground(new java.awt.Color(102, 204, 0));
         setLocationByPlatform(true);
-        setMaximizedBounds(new java.awt.Rectangle(0, 0, 417, 385));
+        setMaximizedBounds(new java.awt.Rectangle(0, 0, 417, 389));
         getContentPane().setLayout(null);
         getContentPane().add(jTextField1);
         jTextField1.setBounds(160, 150, 148, 30);
         getContentPane().add(jTextField2);
-        jTextField2.setBounds(160, 210, 148, 30);
+        jTextField2.setBounds(160, 200, 148, 30);
 
+        jLabel1.setBackground(java.awt.Color.white);
         jLabel1.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
         jLabel1.setText("Nombre");
         getContentPane().add(jLabel1);
         jLabel1.setBounds(30, 140, 68, 26);
 
+        jLabel2.setBackground(java.awt.Color.white);
         jLabel2.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
         jLabel2.setText("Cantidad");
         getContentPane().add(jLabel2);
         jLabel2.setBounds(30, 210, 75, 26);
 
+        jLabel3.setBackground(java.awt.Color.white);
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/plant.png"))); // NOI18N
         getContentPane().add(jLabel3);
         jLabel3.setBounds(90, 20, 230, 88);
 
+        jButton1.setBackground(java.awt.Color.white);
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/add.png"))); // NOI18N
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -68,11 +82,19 @@ String Cantidad;
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(310, 270, 60, 57);
+        jButton1.setBounds(330, 290, 60, 57);
 
+        jButton2.setBackground(java.awt.Color.white);
         jButton2.setText("Agregar campo");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton2);
-        jButton2.setBounds(120, 260, 120, 23);
+        jButton2.setBounds(170, 310, 120, 23);
+        getContentPane().add(jTextField3);
+        jTextField3.setBounds(160, 250, 148, 30);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -80,8 +102,24 @@ String Cantidad;
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 Nombre=jTextField1.getText();
 Cantidad=jTextField2.getText();
+Extra=jTextField3.getText();
+
+listaJP.InsertarPrimero(Nombre);
+listaJP.InsertarPrimero(Cantidad);
+if(estado=true){
+listaJP.InsertarPrimero(Extra);}
+
+
+
+
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+jTextField3.setVisible(true);
+estado=true;
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -125,6 +163,7 @@ Cantidad=jTextField2.getText();
     private javax.swing.JLabel jLabel3;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
 
     public String regresarInf1(String info) {
@@ -135,4 +174,5 @@ Cantidad=jTextField2.getText();
     private void regresarInf2() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+    
 }

@@ -8,6 +8,6 @@ package plantsvszombies;
  *
  * @author MariaJose
  */
-public class ListaPlanta {
+public class NodoJugadorZ {
     
 }
