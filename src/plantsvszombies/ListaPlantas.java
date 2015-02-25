@@ -34,10 +34,46 @@ public class ListaPlantas {
                 inicio=fin;
             }
             else{
-                NodoPlantas nuevo=new NodoPlantas(valor,nombre,ataque,tipo,defensa,null,inicio);
-                fin.setAnterior(nuevo);
+                NodoPlantas nuevo=new NodoPlantas(valor,nombre,ataque,tipo,defensa,fin,null);
+                fin.setSiguiente(nuevo);
                 fin=nuevo;
                 
             }
+    }
+    public String ExtraerInicio(){
+            Object valor=inicio.getValor();
+            inicio=inicio.getSiguiente();
+                if(inicio!=null){
+                    inicio.setAnterior(null);}
+                else{
+                    fin=null;}
+            return valor.toString();
+    }
+    
+        public String ExtraerFin(){
+            Object valor=fin.getValor();
+            fin=fin.getAnterior();
+                if(inicio!=null){
+                    fin.setSiguiente(null);}
+                else{
+                    inicio=null;}
+            return valor.toString();
+    }
+        public void MostrarAdelante(){
+            NodoPlantas temp=inicio;
+            while(temp!=null){
+                    System.out.println(temp.getNombre());
+                    temp=temp.getSiguiente();
+         
             }
+        }
+        public void MostrarAtras(){
+            NodoPlantas temp=fin;
+            while(temp!=null){
+                    System.out.println(temp.getNombre());
+                    temp=temp.getAnterior();
+         
+            }
+        }       
+    
 }

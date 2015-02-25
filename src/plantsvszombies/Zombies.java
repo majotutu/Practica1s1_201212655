@@ -42,23 +42,24 @@ ListaJugadorZ listaJZ =new ListaJugadorZ();
         jLabel3 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
 
-        setMaximizedBounds(new java.awt.Rectangle(0, 0, 417, 389));
+        setMaximizedBounds(new java.awt.Rectangle(0, 0, 404, 349));
         getContentPane().setLayout(null);
         getContentPane().add(jTextField1);
-        jTextField1.setBounds(190, 150, 148, 30);
+        jTextField1.setBounds(160, 140, 148, 30);
         getContentPane().add(jTextField2);
-        jTextField2.setBounds(190, 210, 148, 30);
+        jTextField2.setBounds(160, 200, 148, 30);
 
         jLabel1.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
         jLabel1.setText("Nombre");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(60, 140, 68, 26);
+        jLabel1.setBounds(30, 130, 68, 26);
 
         jLabel2.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
         jLabel2.setText("Cantidad");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(60, 210, 75, 26);
+        jLabel2.setBounds(30, 200, 75, 26);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/zombies.jpg"))); // NOI18N
         getContentPane().add(jLabel3);
@@ -71,7 +72,7 @@ ListaJugadorZ listaJZ =new ListaJugadorZ();
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(330, 300, 40, 40);
+        jButton1.setBounds(330, 260, 40, 40);
 
         jButton2.setText("Agregar campo");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -80,7 +81,11 @@ ListaJugadorZ listaJZ =new ListaJugadorZ();
             }
         });
         getContentPane().add(jButton2);
-        jButton2.setBounds(150, 320, 120, 23);
+        jButton2.setBounds(170, 260, 120, 23);
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/gris.png"))); // NOI18N
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(0, 0, 390, 320);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -154,6 +159,7 @@ ListaJugadorZ listaJZ =new ListaJugadorZ();
     public javax.swing.JLabel jLabel1;
     public javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables

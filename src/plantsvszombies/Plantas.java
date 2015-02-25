@@ -17,6 +17,7 @@ int numero=0;
 NodoJugadorP Primero;
 NodoJugadorP Ultimo;
 ListaJugPlanta listaJP =new ListaJugPlanta();
+CrearPlanta CP;
 
     /**
      * Creates new form Plantas
@@ -44,12 +45,13 @@ ListaJugPlanta listaJP =new ListaJugPlanta();
         jLabel3 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(51, 204, 0));
         setForeground(new java.awt.Color(102, 204, 0));
         setLocationByPlatform(true);
-        setMaximizedBounds(new java.awt.Rectangle(0, 0, 417, 389));
+        setMaximizedBounds(new java.awt.Rectangle(0, 0, 417, 349));
         getContentPane().setLayout(null);
         getContentPane().add(jTextField1);
         jTextField1.setBounds(160, 150, 148, 30);
@@ -81,7 +83,7 @@ ListaJugPlanta listaJP =new ListaJugPlanta();
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(330, 300, 40, 40);
+        jButton1.setBounds(350, 250, 40, 40);
 
         jButton2.setBackground(java.awt.Color.white);
         jButton2.setText("Agregar campo");
@@ -91,7 +93,12 @@ ListaJugPlanta listaJP =new ListaJugPlanta();
             }
         });
         getContentPane().add(jButton2);
-        jButton2.setBounds(170, 320, 120, 23);
+        jButton2.setBounds(170, 260, 120, 23);
+
+        jLabel4.setBackground(new java.awt.Color(0, 153, 0));
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/cadenas-verdes,-fondo-verde-198103.png"))); // NOI18N
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(0, 0, 400, 310);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -106,7 +113,8 @@ listaJP.InsertarPrimero(Cantidad);
 System.out.println("Largo   "+listaJP.Largo());
         System.out.println("cero   "+listaJP.Obtener(listaJP.Largo()-1));
         System.out.println("uno   "+listaJP.Obtener(listaJP.Largo()-2));
-
+CP=new CrearPlanta();
+CP.setVisible(true);
 
 
 
@@ -163,6 +171,7 @@ estado=true;
     public javax.swing.JLabel jLabel1;
     public javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
