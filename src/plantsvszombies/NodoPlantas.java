@@ -9,36 +9,60 @@ package plantsvszombies;
  * @author MariaJose
  */
 public class NodoPlantas {
-    Object valor,nombre,ataque,tipo,defensa;
-        NodoPlantas siguiente;
-    
-    public NodoPlantas(Object valor,Object nombre, Object ataque, Object tipo,Object defensa){
-        this.valor=valor;
-        this.nombre=nombre;
-        this.ataque=ataque;
-        this.tipo=tipo;
-        this.defensa=defensa;
-        this.siguiente=null;
-    }
-    public Object verValor(){
+   NodoPlantas siguiente;
+   NodoPlantas anterior;
+   Object valor,nombre,ataque,tipo,defensa;
+   
+   public NodoPlantas(Object valor,Object nombre,Object ataque,Object tipo,Object defensa,NodoPlantas ant, NodoPlantas sig){
+       this.valor=valor;
+       this.nombre=nombre;
+       this.ataque=ataque;
+       this.tipo=tipo;
+       this.defensa=defensa;
+       this.anterior=ant;
+       this.siguiente=sig;
+   }
+   public NodoPlantas getSiguiente(){
+       return siguiente;
+   }
+   public void setSiguiente(NodoPlantas siguiente){
+       this.siguiente=siguiente;
+   }
+   public NodoPlantas getAnterior(){
+       return anterior;
+   }
+   public void setAnterior(NodoPlantas anterior){
+       this.anterior=anterior;
+   }
+   public Object getValor(){
         return valor;
     }
-    public Object verNombre(){
+   public Object getNombre(){
         return nombre;
     }
-    public Object verAtaque(){
+   public Object getAtaque(){
         return ataque;
     }
-    public Object verTipo(){
+   public Object getTipo(){
         return tipo;
     }
-    public Object verDefensa(){
+   public Object getDefensa(){
         return defensa;
     }
-    public void apuntar(NodoPlantas n){
-        siguiente=n;
+   public void setValor(Object valor){
+        this.valor=valor;
     }
-    public NodoPlantas verSiguiente(){
-        return siguiente;
+   public void setNombre(Object nombre){
+        this.nombre=nombre;
     }
+   public void setAtaque(Object ataque){
+        this.ataque=ataque;
+    }
+   public void setTipo(Object tipo){
+        this.tipo=tipo;
+    }
+   public void setDefensa(Object defensa){
+        this.defensa=defensa;
+    }
+   
 }

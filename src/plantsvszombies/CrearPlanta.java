@@ -271,17 +271,7 @@ String Defensa=jTextField3.getText();
 int Tipo=jComboBox1.getSelectedIndex();
 String tipo=jComboBox1.getItemAt(Tipo).toString();
 
-lp.InsertarPrimero(direccion, Nombre, Ataque, Defensa, tipo);
-jComboBox1.removeAllItems();
-for(int x=0; x<lp.Largo();x++){
-    jComboBox1.addItem(lp.Obtener(x));
-}
-System.out.println("cero   "+lp.Obtener(lp.Largo()-1));
 
-//lp.InsertarPrimero(jLabel1.,Nombre,Ataque,Defensa,tipo);
-
-System.out.println("Largo   "+lp.Largo());
-        System.out.println("cero   "+lp.Obtener(lp.Largo()-1));
       //  System.out.println("uno   "+listaJP.Obtener(lp.Largo()-2));        // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 

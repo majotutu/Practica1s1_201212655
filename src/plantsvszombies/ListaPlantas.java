@@ -9,49 +9,35 @@ package plantsvszombies;
  * @author MariaJose
  */
 public class ListaPlantas {
-     NodoPlantas cabeza;
-    int tamaño;
-        public ListaPlantas(){
-            
-            cabeza=null;
-            tamaño=0;
-            
-            
-            
-        }
-        public Object Obtener(int indice){
-            int contador=0;
-            NodoPlantas temporal=cabeza;
-            
-            while(contador<indice){
-                
-                temporal=temporal.verSiguiente();
-                contador++;
-                
-                }
-            return temporal.verNombre();
-        }
-        public void InsertarPrimero(Object ob,Object ob1,Object ob2,Object ob3,Object ob4){
-            if(cabeza==null){
-                cabeza=new NodoPlantas(ob,ob1,ob2,ob3,ob4);}
+     NodoPlantas inicio;
+     NodoPlantas fin;
+     
+     public ListaPlantas(){
+            inicio=null;
+            fin=null;}
+     
+     public void InsertarInicio(Object valor,Object nombre,Object ataque,Object tipo,Object defensa){
+            if(inicio==null){
+                inicio=new NodoPlantas(valor,nombre,ataque,tipo,defensa,null,null);
+                fin=inicio;
+            }
             else{
-                NodoPlantas temp=cabeza;
-                NodoPlantas nuevo=new NodoPlantas(ob,ob1,ob2,ob3,ob4);
-                nuevo.apuntar(temp);
-                cabeza=nuevo;
-                }
-            tamaño++;
-        }
-        
-        public int Largo(){
-            return tamaño;
-        }
-            
-        
-        public boolean EstaVacia(){
-            
-        return (cabeza==null)?true:false;
-        
-        }
-    
+                NodoPlantas nuevo=new NodoPlantas(valor,nombre,ataque,tipo,defensa,null,inicio);
+                inicio.setAnterior(nuevo);
+                inicio=nuevo;
+                
+            }
+     }
+     public void InsertarFin(Object valor,Object nombre,Object ataque,Object tipo,Object defensa){
+                if(inicio==null){
+                fin=new NodoPlantas(valor,nombre,ataque,tipo,defensa,null,null);
+                inicio=fin;
+            }
+            else{
+                NodoPlantas nuevo=new NodoPlantas(valor,nombre,ataque,tipo,defensa,null,inicio);
+                fin.setAnterior(nuevo);
+                fin=nuevo;
+                
+            }
+            }
 }
