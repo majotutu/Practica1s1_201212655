@@ -8,10 +8,11 @@ package plantsvszombies;
  *
  * @author MariaJose
  */
-public class ListaPlantas {
-     NodoPlantas cabeza;
+public class ListaZombies {
+    
+   NodoZombies cabeza;
     int tamaño;
-        public ListaPlantas(){
+        public ListaZombies(){
             
             cabeza=null;
             tamaño=0;
@@ -21,7 +22,7 @@ public class ListaPlantas {
         }
         public Object Obtener(int indice){
             int contador=0;
-            NodoPlantas temporal=cabeza;
+            NodoZombies temporal=cabeza;
             
             while(contador<indice){
                 
@@ -33,10 +34,10 @@ public class ListaPlantas {
         }
         public void InsertarPrimero(Object ob,Object ob1,Object ob2,Object ob3,Object ob4){
             if(cabeza==null){
-                cabeza=new NodoPlantas(ob,ob1,ob2,ob3,ob4);}
+                cabeza=new NodoZombies(ob,ob1,ob2,ob3,ob4);}
             else{
-                NodoPlantas temp=cabeza;
-                NodoPlantas nuevo=new NodoPlantas(ob,ob1,ob2,ob3,ob4);
+                NodoZombies temp=cabeza;
+                NodoZombies nuevo=new NodoZombies(ob,ob1,ob2,ob3,ob4);
                 nuevo.apuntar(temp);
                 cabeza=nuevo;
                 }
@@ -53,5 +54,6 @@ public class ListaPlantas {
         return (cabeza==null)?true:false;
         
         }
+    
     
 }

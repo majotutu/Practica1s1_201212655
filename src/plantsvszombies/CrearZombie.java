@@ -4,12 +4,10 @@
  */
 package plantsvszombies;
 
-import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.net.URL;
 import javax.imageio.ImageIO;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -21,14 +19,17 @@ import javax.swing.filechooser.FileNameExtensionFilter;
  *
  * @author MariaJose
  */
-public class CrearPlanta extends javax.swing.JFrame {
+public class CrearZombie extends javax.swing.JFrame {
+    
 int conta=0;
-ListaPlantas lp=new ListaPlantas();
-String direccion;
+ListaZombies lp=new ListaZombies();
+String direccion="";
     /**
-     * Creates new form CrearPlanta
+
+    /**
+     * Creates new form CrearZombie
      */
-    public CrearPlanta() {
+    public CrearZombie() {
         initComponents();
     }
 
@@ -41,43 +42,34 @@ String direccion;
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jComboBox2 = new javax.swing.JComboBox();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox();
+        jTextField3 = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
+        jTextField1 = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("jLabel1");
+        jButton3.setText("jButton3");
 
-        jLabel2.setBackground(java.awt.Color.white);
-        jLabel2.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
-        jLabel2.setText("Nombre");
+        jButton4.setText("jButton4");
 
-        jLabel3.setBackground(java.awt.Color.white);
-        jLabel3.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
-        jLabel3.setText("Ataque");
-
-        jLabel4.setBackground(java.awt.Color.white);
-        jLabel4.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
-        jLabel4.setText("Defensa");
-
-        jLabel5.setBackground(java.awt.Color.white);
-        jLabel5.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
-        jLabel5.setText("Tipo");
-
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Directo", "Disparo" }));
+        jButton2.setText("Añadir");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton1.setText("Cargar imagen");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -85,8 +77,6 @@ String direccion;
                 jButton1ActionPerformed(evt);
             }
         });
-
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -104,16 +94,25 @@ String direccion;
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        jButton2.setText("Añadir");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
+        jLabel2.setBackground(java.awt.Color.white);
+        jLabel2.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
+        jLabel2.setText("Nombre");
 
-        jButton3.setText("jButton3");
+        jLabel1.setText("jLabel1");
 
-        jButton4.setText("jButton4");
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Directo", "Disparo" }));
+
+        jLabel3.setBackground(java.awt.Color.white);
+        jLabel3.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
+        jLabel3.setText("Ataque");
+
+        jLabel5.setBackground(java.awt.Color.white);
+        jLabel5.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
+        jLabel5.setText("Tipo");
+
+        jLabel4.setBackground(java.awt.Color.white);
+        jLabel4.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
+        jLabel4.setText("Defensa");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -159,7 +158,7 @@ String direccion;
                                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(91, 91, 91)))
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(42, Short.MAX_VALUE))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -195,95 +194,85 @@ String direccion;
                     .addComponent(jButton2)
                     .addComponent(jButton3)
                     .addComponent(jButton4))
-                .addContainerGap(61, Short.MAX_VALUE))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        String Nombre=jTextField1.getText();
+        String Ataque=jTextField2.getText();
+        String Defensa=jTextField3.getText();
+        int Tipo=jComboBox1.getSelectedIndex();
+        String tipo=jComboBox1.getItemAt(Tipo).toString();
+
+        lp.InsertarPrimero(direccion, Nombre, Ataque, Defensa, tipo);
+        jComboBox2.removeAllItems();
+        for(int x=0; x<lp.Largo();x++){
+            jComboBox2.addItem(lp.Obtener(x));
+        }
+        System.out.println("cero   "+lp.Obtener(lp.Largo()-1));
+
+        //lp.InsertarPrimero(jLabel1.,Nombre,Ataque,Defensa,tipo);
+
+        System.out.println("Largo   "+lp.Largo());
+        System.out.println("cero   "+lp.Obtener(lp.Largo()-1));
+        //  System.out.println("uno   "+listaJP.Obtener(lp.Largo()-2));        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
+
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-File fichero;
-int resultado;
+        File fichero;
+        int resultado;
 
+        Cargar ventana = new Cargar();
 
-Cargar ventana = new Cargar();
+        FileNameExtensionFilter filtro = new FileNameExtensionFilter("JPG y PNG","jpg","png");
 
-FileNameExtensionFilter filtro = new FileNameExtensionFilter("JPG y PNG","jpg","png");
+        ventana.jfchCargar.setFileFilter(filtro);
 
-ventana.jfchCargar.setFileFilter(filtro);
+        resultado= ventana.jfchCargar.showOpenDialog(null);
 
-resultado= ventana.jfchCargar.showOpenDialog(null);
+        if (JFileChooser.APPROVE_OPTION == resultado){
 
+            fichero = ventana.jfchCargar.getSelectedFile();
 
-if (JFileChooser.APPROVE_OPTION == resultado){
+            try{
 
+                ImageIcon icon = new ImageIcon(fichero.toString());
 
-        fichero = ventana.jfchCargar.getSelectedFile();
+                Icon icono = new ImageIcon(icon.getImage().getScaledInstance(jLabel1.getWidth(), jLabel1.getHeight(), Image.SCALE_DEFAULT));
 
-        try{
+                jLabel1.setText(null);
 
-               ImageIcon icon = new ImageIcon(fichero.toString());
+                jLabel1.setIcon( icono );
+            }catch(Exception ex){
 
-Icon icono = new ImageIcon(icon.getImage().getScaledInstance(jLabel1.getWidth(), jLabel1.getHeight(), Image.SCALE_DEFAULT));
+                JOptionPane.showMessageDialog(null, "Error abriendo la                   imagen "+ ex);
 
+            }
 
-jLabel1.setText(null);
-               
-               jLabel1.setIcon( icono );
-                       }catch(Exception ex){
+            BufferedImage bImage = null;
+            File initialImage = fichero;
+            System.out.println(ventana.jfchCargar.getSelectedFile().getPath().toString());
+            try {
+                bImage = ImageIO.read(initialImage);
+            } catch (IOException ex) {
+                System.out.println("No se pudo leer la imagen");
+            }
+            try {
+                direccion="carga"+conta+".jpg";
+                ImageIO.write(bImage, "jpg", new File(direccion));
+            } catch (IOException ex) {
+                System.out.println("No se pudo leer la imagen2");
+            }
 
-           
-JOptionPane.showMessageDialog(null, "Error abriendo la                   imagen "+ ex);
-                 
+            conta++;
+
         }
-               
-BufferedImage bImage = null;
-File initialImage = fichero;
-System.out.println(ventana.jfchCargar.getSelectedFile().getPath().toString());
-        try {
-            bImage = ImageIO.read(initialImage);
-        } catch (IOException ex) {
-            System.out.println("No se pudo leer la imagen");
-        }
-                try {
-                    direccion="carga"+conta+".jpg";
-            ImageIO.write(bImage, "jpg", new File(direccion));
-        } catch (IOException ex) {
-            System.out.println("No se pudo leer la imagen2");
-        }
-
-
-conta++;
-
-         
-
-
-    
- }
 
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-String Nombre=jTextField1.getText();
-String Ataque=jTextField2.getText();
-String Defensa=jTextField3.getText();
-int Tipo=jComboBox1.getSelectedIndex();
-String tipo=jComboBox1.getItemAt(Tipo).toString();
-
-lp.InsertarPrimero(direccion, Nombre, Ataque, Defensa, tipo);
-jComboBox1.removeAllItems();
-for(int x=0; x<lp.Largo();x++){
-    jComboBox1.addItem(lp.Obtener(x));
-}
-System.out.println("cero   "+lp.Obtener(lp.Largo()-1));
-
-//lp.InsertarPrimero(jLabel1.,Nombre,Ataque,Defensa,tipo);
-
-System.out.println("Largo   "+lp.Largo());
-        System.out.println("cero   "+lp.Obtener(lp.Largo()-1));
-      //  System.out.println("uno   "+listaJP.Obtener(lp.Largo()-2));        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -302,20 +291,20 @@ System.out.println("Largo   "+lp.Largo());
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CrearPlanta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CrearZombie.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CrearPlanta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CrearZombie.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CrearPlanta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CrearZombie.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CrearPlanta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CrearZombie.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CrearPlanta().setVisible(true);
+                new CrearZombie().setVisible(true);
             }
         });
     }

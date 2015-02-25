@@ -96,6 +96,8 @@ ListaJugadorZ listaJZ =new ListaJugadorZ();
         System.out.println("Largo   "+listaJZ.Largo());
         System.out.println("cero   "+listaJZ.Obtener(listaJZ.Largo()-1));
         System.out.println("uno   "+listaJZ.Obtener(listaJZ.Largo()-2));
+        CrearZombie CP=new CrearZombie();
+        CP.setVisible(true);
 
 
 

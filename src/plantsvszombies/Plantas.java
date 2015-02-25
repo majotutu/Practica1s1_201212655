@@ -106,9 +106,6 @@ listaJP.InsertarPrimero(Cantidad);
 System.out.println("Largo   "+listaJP.Largo());
         System.out.println("cero   "+listaJP.Obtener(listaJP.Largo()-1));
         System.out.println("uno   "+listaJP.Obtener(listaJP.Largo()-2));
-        
-        CrearPlanta CP=new CrearPlanta();
-        CP.setVisible(true);
 
 
 
