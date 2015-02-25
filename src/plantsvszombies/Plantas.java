@@ -47,7 +47,6 @@ CrearPlanta CP;
         jButton2 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(51, 204, 0));
         setForeground(new java.awt.Color(102, 204, 0));
         setLocationByPlatform(true);

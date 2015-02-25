@@ -11,6 +11,7 @@ package plantsvszombies;
 public class NodoPlantas {
    NodoPlantas siguiente;
    NodoPlantas anterior;
+   
    Object valor,nombre,ataque,tipo,defensa;
    
    public NodoPlantas(Object valor,Object nombre,Object ataque,Object tipo,Object defensa,NodoPlantas ant, NodoPlantas sig){

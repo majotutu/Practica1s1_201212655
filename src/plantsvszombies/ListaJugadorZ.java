@@ -9,8 +9,8 @@ package plantsvszombies;
  * @author MariaJose
  */
 public class ListaJugadorZ {
-     NodoJugadorZ cabeza;
-    int tamaño;
+    public static NodoJugadorZ cabeza;
+    public static int tamaño;
         public ListaJugadorZ(){
             
             cabeza=null;
@@ -19,7 +19,7 @@ public class ListaJugadorZ {
             
             
         }
-        public Object Obtener(int indice){
+        public static Object Obtener(int indice){
             int contador=0;
             NodoJugadorZ temporal=cabeza;
             
@@ -45,7 +45,7 @@ public class ListaJugadorZ {
             tamaño++;
         }
         
-        public int Largo(){
+        public static int Largo(){
             return tamaño;
         }
             

@@ -34,7 +34,7 @@ public class Dimension extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximizedBounds(new java.awt.Rectangle(0, 0, 430, 354));
         getContentPane().setLayout(null);
 
         jLabel2.setBackground(java.awt.Color.white);
@@ -44,6 +44,11 @@ public class Dimension extends javax.swing.JFrame {
         jLabel2.setBounds(80, 150, 50, 26);
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/play.png"))); // NOI18N
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton1);
         jButton1.setBounds(350, 260, 60, 50);
         getContentPane().add(jTextField1);
@@ -67,6 +72,11 @@ public class Dimension extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+Tablero t=new Tablero();
+t.setVisible(true);// TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments

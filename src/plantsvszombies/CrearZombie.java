@@ -183,7 +183,7 @@ String direccion="";
                 System.out.println("No se pudo leer la imagen");
             }
             try {
-                direccion="carga"+conta+".jpg";
+                direccion="cargaZ"+conta+".jpg";
                 ImageIO.write(bImage, "jpg", new File(direccion));
             } catch (IOException ex) {
                 System.out.println("No se pudo leer la imagen2");

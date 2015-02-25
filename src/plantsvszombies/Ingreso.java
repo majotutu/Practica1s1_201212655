@@ -103,6 +103,8 @@ z.jLabel2.setText("Cantidad");
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
      System.out.println("hello");
+     Dimension d=new Dimension();
+     d.setVisible(true);
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 
