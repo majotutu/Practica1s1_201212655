@@ -59,7 +59,7 @@ String direccion="";
         setMaximizedBounds(new java.awt.Rectangle(0, 0, 512, 400));
         getContentPane().setLayout(null);
 
-        jLabel1.setText("jLabel1");
+        jLabel1.setText("imagen");
         getContentPane().add(jLabel1);
         jLabel1.setBounds(30, 131, 132, 122);
 
