@@ -324,15 +324,15 @@ ex.printStackTrace();
                 for(int x=0;x<listaz.tamanio;x++){
                    System.out.println("empieza cagada");
                    System.out.println(listaz.tamanio-x);
-                   String dato=listaz.ObtenerIt2(listaz.tamanio-x-1).toString();
+                   String dato=listaz.ObtenerIt(listaz.tamanio-x-1).toString();
                    
                    ZombieCatalogo.add(x,dato);
                    System.out.println(ZombieCatalogo.get(x));
                     }
                 for(int x=0;x<listap.tamanio;x++){
                    System.out.println(listap.tamanio-x-1);
-                   System.out.println(listap.ObtenerIt2(listap.tamanio-x-1));
-                   PlantitaCatalogo.add(x,listap.ObtenerIt2(listap.tamanio-x-1).toString());
+                   System.out.println(listap.ObtenerIt(listap.tamanio-x-1));
+                   PlantitaCatalogo.add(x,listap.ObtenerIt(listap.tamanio-x-1).toString());
                    System.out.println(PlantitaCatalogo.get(x));
                     }
                 
