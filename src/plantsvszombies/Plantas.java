@@ -53,21 +53,21 @@ CrearPlanta CP;
         setMaximizedBounds(new java.awt.Rectangle(0, 0, 417, 349));
         getContentPane().setLayout(null);
         getContentPane().add(jTextField1);
-        jTextField1.setBounds(160, 150, 148, 30);
+        jTextField1.setBounds(160, 140, 148, 30);
         getContentPane().add(jTextField2);
-        jTextField2.setBounds(160, 210, 148, 30);
+        jTextField2.setBounds(160, 200, 148, 30);
 
         jLabel1.setBackground(java.awt.Color.white);
         jLabel1.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
         jLabel1.setText("Nombre");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(30, 150, 68, 26);
+        jLabel1.setBounds(30, 140, 68, 26);
 
         jLabel2.setBackground(java.awt.Color.white);
         jLabel2.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
         jLabel2.setText("Cantidad");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(30, 210, 75, 26);
+        jLabel2.setBounds(30, 200, 75, 26);
 
         jLabel3.setBackground(java.awt.Color.white);
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/plant.png"))); // NOI18N
@@ -75,7 +75,7 @@ CrearPlanta CP;
         jLabel3.setBounds(90, 20, 230, 88);
 
         jButton1.setBackground(java.awt.Color.white);
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/add.png"))); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Blue_plus_icon.png"))); // NOI18N
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);

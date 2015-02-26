@@ -42,6 +42,9 @@ String direccion="";
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
+        jComboBox2 = new javax.swing.JComboBox();
+        jButton4 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
@@ -56,12 +59,38 @@ String direccion="";
         jLabel7 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(51, 153, 0));
-        setMaximizedBounds(new java.awt.Rectangle(0, 0, 512, 400));
+        setMaximizedBounds(new java.awt.Rectangle(0, 0, 627, 400));
         getContentPane().setLayout(null);
 
         jLabel1.setText("imagen");
         getContentPane().add(jLabel1);
         jLabel1.setBounds(30, 131, 132, 122);
+
+        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jComboBox2);
+        jComboBox2.setBounds(510, 130, 100, 20);
+
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/trash (1).png"))); // NOI18N
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton4);
+        jButton4.setBounds(340, 310, 40, 40);
+
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/lapiz-icono-5099-32.png"))); // NOI18N
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton3);
+        jButton3.setBounds(390, 310, 40, 40);
 
         jLabel2.setBackground(java.awt.Color.white);
         jLabel2.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
@@ -106,23 +135,23 @@ String direccion="";
         getContentPane().add(jButton1);
         jButton1.setBounds(30, 264, 132, 23);
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/add.png"))); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Blue_plus_icon.png"))); // NOI18N
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
         getContentPane().add(jButton2);
-        jButton2.setBounds(449, 312, 41, 39);
+        jButton2.setBounds(441, 310, 40, 39);
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/plant.png"))); // NOI18N
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(132, 25, 230, 88);
+        jLabel6.setBounds(200, 20, 230, 88);
 
         jLabel7.setBackground(new java.awt.Color(0, 153, 0));
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/cadenas-verdes,-fondo-verde-198103.png"))); // NOI18N
         getContentPane().add(jLabel7);
-        jLabel7.setBounds(0, 0, 500, 360);
+        jLabel7.setBounds(0, 0, 620, 360);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -197,11 +226,59 @@ String Defensa=jTextField3.getText();
 int Tipo=jComboBox1.getSelectedIndex();
 String tipo=jComboBox1.getItemAt(Tipo).toString();
 lp.InsertarInicio(direccion, Nombre, Ataque, tipo, Defensa);
+jComboBox2.removeAllItems();
+jComboBox2.addItem("Plantas");
+    for(int x=0; x<lp.tamanio;x++){
+        jComboBox2.addItem(lp.ObtenerIt(x));}
 lp.MostrarAtras();
+
 
 
       //  System.out.println("uno   "+listaJP.Obtener(lp.Largo()-2));        // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+int Tipo=jComboBox1.getSelectedIndex();
+String tipo=jComboBox1.getItemAt(Tipo).toString();
+Boolean hacer;
+        hacer=lp.Modificar(direccion,jTextField1.getText(), jTextField2.getText(), tipo, jTextField3.getText());  
+        if(hacer=true){
+        lp.MostrarAtras();}
+        
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
+int comboindice=jComboBox2.getSelectedIndex();
+if(comboindice>0){
+   
+NodoPlantas temp=lp.IndiceDar(jComboBox2.getSelectedItem());
+jTextField1.setText("");
+jTextField2.setText("");
+jTextField3.setText("");
+jTextField1.setText(temp.getNombre().toString());
+jTextField2.setText(temp.getAtaque().toString());
+jTextField3.setText(temp.getDefensa().toString());
+ImageIcon iconos = new ImageIcon(temp.getValor().toString());
+Icon iconos2=new ImageIcon(iconos.getImage().getScaledInstance(jLabel1.getWidth(), jLabel1.getHeight(), Image.SCALE_DEFAULT));
+jLabel1.setIcon(iconos2);
+jComboBox1.setSelectedItem(temp.getTipo());}
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox2ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+Boolean f=lp.Eliminar(jTextField1.getText());
+if(f=true){
+jComboBox2.removeAllItems();
+jComboBox2.addItem("Plantas");
+    for(int x=0; x<lp.tamanio;x++){
+        jComboBox2.addItem(lp.ObtenerIt(x));}
+lp.MostrarAdelante();
+jLabel1.setIcon(null);
+jTextField1.setText("");
+jTextField2.setText("");
+jTextField3.setText("");}// TODO add your handling code here:
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -240,7 +317,10 @@ lp.MostrarAtras();
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JComboBox jComboBox1;
+    private javax.swing.JComboBox jComboBox2;
     private javax.swing.JLabel jLabel1;
     public javax.swing.JLabel jLabel2;
     public javax.swing.JLabel jLabel3;

@@ -37,14 +37,14 @@
     <Component class="javax.swing.JTextField" name="jTextField1">
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="160" y="150" width="148" height="30"/>
+          <AbsoluteConstraints x="160" y="140" width="148" height="30"/>
         </Constraint>
       </Constraints>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextField2">
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="160" y="210" width="148" height="30"/>
+          <AbsoluteConstraints x="160" y="200" width="148" height="30"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -63,7 +63,7 @@
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="30" y="150" width="-1" height="-1"/>
+          <AbsoluteConstraints x="30" y="140" width="-1" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -82,7 +82,7 @@
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="30" y="210" width="-1" height="-1"/>
+          <AbsoluteConstraints x="30" y="200" width="-1" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -107,7 +107,7 @@
           <Color blue="ff" green="ff" id="white" palette="1" red="ff" type="palette"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/img/add.png"/>
+          <Image iconType="3" name="/img/Blue_plus_icon.png"/>
         </Property>
       </Properties>
       <Events>

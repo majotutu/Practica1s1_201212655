@@ -63,9 +63,9 @@ ListaJugadorZ listaJZ =new ListaJugadorZ();
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/zombies.jpg"))); // NOI18N
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(80, 20, 249, 84);
+        jLabel3.setBounds(70, 20, 249, 84);
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/add.png"))); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Blue_plus_icon.png"))); // NOI18N
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);

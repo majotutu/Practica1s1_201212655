@@ -4,6 +4,10 @@
  */
 package plantsvszombies;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.Timer;
+
 /**
  *
  * @author MariaJose
@@ -20,7 +24,14 @@ ListaJugadorZ lz;
         initComponents();
         jLabel2.setText("Jugador:  "+Lp.Obtener(Lp.Largo()-1).toString());
         jLabel3.setText("Jugador:  "+lz.Obtener(lz.Largo()-1).toString());
-       
+        Timer timer;
+    timer = new Timer(1000,new ActionListener(){
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                
+            }
+        });
        
     }
 

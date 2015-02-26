@@ -19,6 +19,8 @@ public class ListaJugPlanta {
             
             
         }
+        
+        
         public static Object Obtener(int indice){
             int contador=0;
             NodoJugadorP temporal=cabeza;

@@ -42,9 +42,12 @@ String direccion="";
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton2 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        jButton4 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jComboBox2 = new javax.swing.JComboBox();
+        jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox();
         jTextField3 = new javax.swing.JTextField();
@@ -56,17 +59,49 @@ String direccion="";
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
 
-        setMaximizedBounds(new java.awt.Rectangle(0, 0, 500, 420));
+        setMaximizedBounds(new java.awt.Rectangle(0, 0, 583, 387));
         getContentPane().setLayout(null);
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/add.png"))); // NOI18N
+        jLabel2.setBackground(java.awt.Color.white);
+        jLabel2.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
+        jLabel2.setText("Nombre");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(180, 120, 68, 26);
+
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/trash (1).png"))); // NOI18N
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton4);
+        jButton4.setBounds(290, 310, 40, 40);
+
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/lapiz-icono-5099-32.png"))); // NOI18N
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton3);
+        jButton3.setBounds(340, 310, 40, 40);
+
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Blue_plus_icon.png"))); // NOI18N
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
         getContentPane().add(jButton2);
-        jButton2.setBounds(427, 313, 43, 39);
+        jButton2.setBounds(390, 310, 40, 39);
+
+        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jComboBox2);
+        jComboBox2.setBounds(460, 120, 100, 20);
 
         jButton1.setText("Cargar imagen");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -75,56 +110,74 @@ String direccion="";
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(10, 265, 132, 23);
-
-        jLabel2.setBackground(java.awt.Color.white);
-        jLabel2.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
-        jLabel2.setText("Nombre");
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(186, 132, 68, 26);
+        jButton1.setBounds(10, 250, 132, 23);
 
         jLabel1.setText("imagen");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(10, 132, 132, 122);
+        jLabel1.setBounds(10, 120, 132, 122);
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Directo", "Disparo" }));
         getContentPane().add(jComboBox1);
-        jComboBox1.setBounds(322, 228, 148, 26);
+        jComboBox1.setBounds(280, 220, 148, 26);
         getContentPane().add(jTextField3);
-        jTextField3.setBounds(318, 265, 152, 30);
+        jTextField3.setBounds(280, 270, 152, 30);
 
         jLabel3.setBackground(java.awt.Color.white);
         jLabel3.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
         jLabel3.setText("Ataque");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(186, 180, 59, 26);
+        jLabel3.setBounds(180, 170, 59, 26);
         getContentPane().add(jTextField2);
-        jTextField2.setBounds(322, 180, 148, 30);
+        jTextField2.setBounds(280, 170, 148, 30);
         getContentPane().add(jTextField1);
-        jTextField1.setBounds(322, 132, 148, 30);
+        jTextField1.setBounds(280, 120, 148, 30);
 
         jLabel5.setBackground(java.awt.Color.white);
         jLabel5.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
         jLabel5.setText("Tipo");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(186, 228, 37, 26);
+        jLabel5.setBounds(180, 220, 37, 26);
 
         jLabel4.setBackground(java.awt.Color.white);
         jLabel4.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
         jLabel4.setText("Defensa");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(186, 265, 70, 26);
+        jLabel4.setBounds(180, 270, 70, 26);
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/zombies.jpg"))); // NOI18N
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(120, 21, 249, 84);
+        jLabel6.setBounds(170, 20, 249, 84);
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/gris.png"))); // NOI18N
         getContentPane().add(jLabel7);
-        jLabel7.setBounds(0, 0, 500, 380);
+        jLabel7.setBounds(0, -10, 590, 380);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        Boolean f=lp.Eliminar(jTextField1.getText());
+        if(f=true){
+            jComboBox2.removeAllItems();
+            jComboBox2.addItem("Zombies");
+            for(int x=0; x<lp.tamanio;x++){
+                jComboBox2.addItem(lp.ObtenerIt(x));}
+            lp.MostrarAdelante();
+            jLabel1.setIcon(null);
+            jTextField1.setText("");
+            jTextField2.setText("");
+            jTextField3.setText("");}// TODO add your handling code here:
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        int Tipo=jComboBox1.getSelectedIndex();
+        String tipo=jComboBox1.getItemAt(Tipo).toString();
+        Boolean hacer;
+        hacer=lp.Modificar(direccion,jTextField1.getText(), jTextField2.getText(), tipo, jTextField3.getText());
+        if(hacer=true){
+            lp.MostrarAtras();}
+
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         String Nombre=jTextField1.getText();
@@ -132,16 +185,34 @@ String direccion="";
         String Defensa=jTextField3.getText();
         int Tipo=jComboBox1.getSelectedIndex();
         String tipo=jComboBox1.getItemAt(Tipo).toString();
-
-        lp.InsertarPrimero(direccion, Nombre, Ataque, Defensa, tipo);
-
-        System.out.println("wtf   "+lp.Obtener(lp.Largo()-1));
-
-        //lp.InsertarPrimero(jLabel1.,Nombre,Ataque,Defensa,tipo);
-
+        lp.InsertarInicio(direccion, Nombre, Ataque, tipo, Defensa);
+        jComboBox2.removeAllItems();
+        jComboBox2.addItem("Zombies");
+        for(int x=0; x<lp.tamanio;x++){
+            jComboBox2.addItem(lp.ObtenerIt(x));}
+        lp.MostrarAtras();
 
         //  System.out.println("uno   "+listaJP.Obtener(lp.Largo()-2));        // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
+        int comboindice=jComboBox2.getSelectedIndex();
+        if(comboindice>0){
+
+            NodoZombies temp=lp.IndiceDar(jComboBox2.getSelectedItem());
+            jTextField1.setText("");
+            jTextField2.setText("");
+            jTextField3.setText("");
+            jTextField1.setText(temp.getNombre().toString());
+            jTextField2.setText(temp.getAtaque().toString());
+            jTextField3.setText(temp.getDefensa().toString());
+            ImageIcon iconos = new ImageIcon(temp.getValor().toString());
+            Icon iconos2=new ImageIcon(iconos.getImage().getScaledInstance(jLabel1.getWidth(), jLabel1.getHeight(), Image.SCALE_DEFAULT));
+            jLabel1.setIcon(iconos2);
+            jComboBox1.setSelectedItem(temp.getTipo());}
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         File fichero;
@@ -183,7 +254,7 @@ String direccion="";
                 System.out.println("No se pudo leer la imagen");
             }
             try {
-                direccion="cargaZ"+conta+".jpg";
+                direccion="carga"+conta+".jpg";
                 ImageIO.write(bImage, "jpg", new File(direccion));
             } catch (IOException ex) {
                 System.out.println("No se pudo leer la imagen2");
@@ -233,7 +304,10 @@ String direccion="";
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JComboBox jComboBox1;
+    private javax.swing.JComboBox jComboBox2;
     private javax.swing.JLabel jLabel1;
     public javax.swing.JLabel jLabel2;
     public javax.swing.JLabel jLabel3;
