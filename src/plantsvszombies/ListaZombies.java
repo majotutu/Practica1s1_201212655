@@ -12,11 +12,12 @@ public class ListaZombies {
     
   NodoZombies inicio;
      NodoZombies fin;
-     public int tamanio;
+     public static int tamanio;
      
      public ListaZombies(){
             inicio=null;
             fin=null;}
+     
    public Boolean Modificar(Object valor,Object nombre,Object ataque,Object tipo,Object defensa){
         NodoZombies temp=inicio;
         while(temp!=null){
@@ -57,6 +58,7 @@ public class ListaZombies {
                 fin=nuevo;
                 
             }
+                tamanio++;
     }
     public String ExtraerInicio(){
             Object valor=inicio.getValor();
@@ -90,6 +92,22 @@ public class ListaZombies {
                 
                 }
             return temporal.nombre;
+        }
+       
+         public Object ObtenerIt2(int indice){
+            int contador=0;
+            NodoZombies temporal=inicio;
+            String pla="";
+            
+            while(contador<indice){
+                
+                temporal=temporal.siguiente;
+                contador++;
+                
+                }
+            pla=temporal.nombre.toString()+" "+temporal.tipo.toString()+" "+temporal.ataque.toString()+" "+temporal.defensa.toString()+" "+temporal.valor.toString();
+                  
+            return pla;
         }
         public void MostrarAdelante(){
             NodoZombies temp=inicio;

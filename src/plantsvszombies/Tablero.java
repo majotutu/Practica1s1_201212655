@@ -6,6 +6,9 @@ package plantsvszombies;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.FileWriter;
+import java.io.PrintWriter;
+import java.util.ArrayList;
 import javax.swing.Timer;
 
 /**
@@ -16,6 +19,13 @@ public class Tablero extends javax.swing.JFrame {
 
 ListaJugPlanta Lp;
 ListaJugadorZ lz;
+ListaPlantas listap;
+ListaZombies listaz;
+ArrayList<String> Zombie = new ArrayList<String>();
+ArrayList<String> Plantita = new ArrayList<String>();
+ArrayList<String> PlantitaCatalogo = new ArrayList<String>();
+ArrayList<String> ZombieCatalogo = new ArrayList<String>();
+
 
     /**
      * Creates new form Tablero
@@ -89,7 +99,7 @@ ListaJugadorZ lz;
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/03 - cinco lineas 3.JPG"))); // NOI18N
 
-        jButton1.setText("jButton1");
+        jButton1.setText("Reportes");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -145,6 +155,10 @@ ListaJugadorZ lz;
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 cambiar();
+EscribirJugadores();
+generar("Jugadores");
+EscribirCatalogo();
+generar("Catalogo");
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -194,5 +208,157 @@ cambiar();
 
     private void cambiar() {
 
+    }
+    public void EscribirJugadores(){
+        
+    FileWriter fichero = null;
+        PrintWriter pw = null;
+        try
+        {
+            
+            fichero = new FileWriter("Jugadores.txt");
+            pw = new PrintWriter(fichero);
+            pw.println("digraph G");
+            pw.println("{");
+            pw.println("Jugadores;");
+            pw.println("Plantas;");
+            pw.println("Zombies;");
+                for(int x=0;x<lz.Largo();x++){
+                   System.out.println(lz.Largo()-x-1);
+                   System.out.println(lz.Obtener(lz.Largo()-x-1).toString());
+                   Zombie.add(x,lz.Obtener(lz.Largo()-x-1).toString());
+                   System.out.println(Zombie.get(x));
+                    }
+                for(int x=0;x<Lp.Largo();x++){
+                   System.out.println(Lp.Largo()-x-1);
+                   System.out.println(Lp.Obtener(Lp.Largo()-x-1).toString());
+                   Plantita.add(x,Lp.Obtener(Lp.Largo()-x-1).toString());
+                   System.out.println(Plantita.get(x));
+                    }
+                
+            int cuenta=lz.Largo()-1;
+            System.out.println(cuenta);
+            pw.println("Jugadores -> Plantas;");
+            pw.println("Jugadores -> Zombies;");
+            pw.println("Plantas ->"+Plantita.get(0));
+            for(int x=1;x<Plantita.size();x++){
+                pw.println(Plantita.get(x-1)+" -> "+Plantita.get(x));}
+            pw.println("Zombies -> "+Zombie.get(0));
+            for(int x=1;x<Zombie.size();x++){
+                pw.println(Zombie.get(x-1)+" -> "+Zombie.get(x));}
+            pw.println("}");
+ 
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+           try {
+           // Nuevamente aprovechamos el finally para 
+           // asegurarnos que se cierra el fichero.
+           if (null != fichero)
+              fichero.close();
+           } catch (Exception e2) {
+              e2.printStackTrace();
+           }
+        }
+    }
+    public void generar(String LaRuta){
+       
+try {
+
+//path del dot.exe,por lo general es la misma, pero depende de donde hayas instalado el paquete de Graphviz
+String dotPath="C:\\Program Files (x86)\\Graphviz2.38\\bin\\dot.exe";
+
+//path del archivo creado con el codigo del graphviz que queremos
+
+String fileInputPath = LaRuta+".txt";
+
+//path de salida del grafo, es decir el path de la imagen que vamos a crear con graphviz
+
+String fileOutputPath = LaRuta+".jpg";
+
+//tipo de imagen de salida, en este caso es jpg
+
+String tParam = "-Tjpg";
+
+String tOParam = "-o";
+
+//concatenamos nuestras direcciones. Lo que hice es crear un vector, para poder editar las direcciones de entrada y salida, usando las variables antes inicializadas
+
+//recordemos el comando en la consola de windows: C:\Archivos de programa\Graphviz 2.21\bin\dot.exe -Tjpg grafo1.txt -o grafo1.jpg Esto es lo que concatenamos en el vector siguiente:
+
+String[] cmd = new String[5];
+cmd[0] = dotPath;
+cmd[1] = tParam;
+cmd[2] = fileInputPath;
+cmd[3] = tOParam;
+cmd[4] = fileOutputPath;
+
+//Invocamos nuestra clase 
+
+Runtime rt = Runtime.getRuntime();
+
+//Ahora ejecutamos como lo hacemos en consola
+
+rt.exec( cmd );
+
+} catch (Exception ex) {
+ex.printStackTrace();
+}  finally {
+}
+}
+
+    private void EscribirCatalogo() {
+            FileWriter fichero = null;
+        PrintWriter pw = null;
+        try
+        {
+           
+            
+            fichero = new FileWriter("Catalogo.txt");
+            pw = new PrintWriter(fichero);
+            pw.println("digraph G");
+            pw.println("{");
+            
+            pw.println("Plantas;");
+            pw.println("Zombies;");
+                for(int x=0;x<listaz.tamanio;x++){
+                   System.out.println("empieza cagada");
+                   System.out.println(listaz.tamanio-x);
+                   String dato=listaz.ObtenerIt2(listaz.tamanio-x-1).toString();
+                   
+                   ZombieCatalogo.add(x,dato);
+                   System.out.println(ZombieCatalogo.get(x));
+                    }
+                for(int x=0;x<listap.tamanio;x++){
+                   System.out.println(listap.tamanio-x-1);
+                   System.out.println(listap.ObtenerIt2(listap.tamanio-x-1));
+                   PlantitaCatalogo.add(x,listap.ObtenerIt2(listap.tamanio-x-1).toString());
+                   System.out.println(PlantitaCatalogo.get(x));
+                    }
+                
+            int cuenta=listaz.tamanio-1;
+            System.out.println(cuenta);
+
+            pw.println("Plantas ->"+PlantitaCatalogo.get(0));
+            for(int x=1;x<PlantitaCatalogo.size();x++){
+                pw.println(PlantitaCatalogo.get(x-1)+" -> "+PlantitaCatalogo.get(x));}
+            pw.println("Zombies -> "+ZombieCatalogo.get(0));
+            for(int x=1;x<ZombieCatalogo.size();x++){
+                pw.println(ZombieCatalogo.get(x-1)+" -> "+ZombieCatalogo.get(x));}
+            pw.println("}");
+ 
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+           try {
+           // Nuevamente aprovechamos el finally para 
+           // asegurarnos que se cierra el fichero.
+           if (null != fichero)
+              fichero.close();
+           } catch (Exception e2) {
+              e2.printStackTrace();
+           }
+        }
+        
     }
 }

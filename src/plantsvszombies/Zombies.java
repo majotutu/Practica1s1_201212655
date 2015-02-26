@@ -91,16 +91,7 @@ ListaJugadorZ listaJZ =new ListaJugadorZ();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        Nombre=jTextField1.getText();
-        Cantidad=jTextField2.getText();
-        
-        
-        listaJZ.InsertarPrimero(Nombre);
-        listaJZ.InsertarPrimero(Cantidad);
 
-        System.out.println("Largo   "+listaJZ.Largo());
-        System.out.println("cero   "+listaJZ.Obtener(listaJZ.Largo()-1));
-        System.out.println("uno   "+listaJZ.Obtener(listaJZ.Largo()-2));
         CrearZombie CP=new CrearZombie();
         CP.setVisible(true);
 
@@ -112,7 +103,16 @@ ListaJugadorZ listaJZ =new ListaJugadorZ();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-     
+        Nombre=jTextField1.getText();
+        Cantidad=jTextField2.getText();
+        
+        
+        listaJZ.InsertarPrimero(Nombre);
+        listaJZ.InsertarPrimero(Cantidad);
+
+        System.out.println("Largo   "+listaJZ.Largo());
+        System.out.println("cero   "+listaJZ.Obtener(listaJZ.Largo()-1));
+        System.out.println("uno   "+listaJZ.Obtener(listaJZ.Largo()-2));     
         estado=true;
         jLabel1.setText("Extra");
         jLabel2.setText("Extra");

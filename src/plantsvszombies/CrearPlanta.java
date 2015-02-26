@@ -201,7 +201,7 @@ System.out.println(ventana.jfchCargar.getSelectedFile().getPath().toString());
             System.out.println("No se pudo leer la imagen");
         }
                 try {
-                    direccion="carga"+conta+".jpg";
+                    direccion="cargaP"+conta+".jpg";
             ImageIO.write(bImage, "jpg", new File(direccion));
         } catch (IOException ex) {
             System.out.println("No se pudo leer la imagen2");

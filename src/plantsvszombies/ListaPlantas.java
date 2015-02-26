@@ -56,6 +56,7 @@ public class ListaPlantas {
                 fin=nuevo;
                 
             }
+                tamanio++;
     }
     public String ExtraerInicio(){
             Object valor=inicio.getValor();
@@ -97,6 +98,20 @@ public class ListaPlantas {
                     temp=temp.getSiguiente();
          
             }
+        }
+         public Object ObtenerIt2(int indice){
+            int contador=0;
+            NodoPlantas temporal=inicio;
+            String pla="";
+            
+            while(contador<indice){
+                
+                temporal=temporal.siguiente;
+                contador++;
+                
+                }
+            pla=temporal.nombre.toString()+" "+temporal.defensa.toString()+" "+temporal.ataque.toString()+" "+temporal.tipo.toString()+" "+temporal.valor.toString();
+            return pla;
         }
         public NodoPlantas IndiceDar(Object dato){
             NodoPlantas temp=inicio;

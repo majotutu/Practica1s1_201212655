@@ -1,0 +1,14 @@
+digraph G
+{
+Jugadores;
+Plantas;
+Zombies;
+Jugadores -> Plantas;
+Jugadores -> Zombies;
+Plantas ->dsaf
+dsaf -> lkñk
+Zombies -> asf
+asf -> as
+as -> asf
+asf -> as
+}

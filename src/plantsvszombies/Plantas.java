@@ -103,15 +103,7 @@ CrearPlanta CP;
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-Nombre=jTextField1.getText();
-Cantidad=jTextField2.getText();
 
-
-listaJP.InsertarPrimero(Nombre);
-listaJP.InsertarPrimero(Cantidad);
-System.out.println("Largo   "+listaJP.Largo());
-        System.out.println("cero   "+listaJP.Obtener(listaJP.Largo()-1));
-        System.out.println("uno   "+listaJP.Obtener(listaJP.Largo()-2));
 CP=new CrearPlanta();
 CP.setVisible(true);
 
@@ -123,6 +115,16 @@ CP.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+
+Nombre=jTextField1.getText();
+Cantidad=jTextField2.getText();
+
+
+listaJP.InsertarPrimero(Nombre);
+listaJP.InsertarPrimero(Cantidad);
+System.out.println("Largo   "+listaJP.Largo());
+        System.out.println("cero   "+listaJP.Obtener(listaJP.Largo()-1));
+        System.out.println("uno   "+listaJP.Obtener(listaJP.Largo()-2));
 jLabel1.setText("Extra");
 jLabel2.setText("Extra");
 
